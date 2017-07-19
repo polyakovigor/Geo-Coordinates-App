@@ -1,0 +1,18 @@
+<div class="center jumbotron">
+  <div class="text-center">
+    <h1>Send Us Your Address</h1>
+    <h2>and we'll let you know where you are</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_tag locations_get_location_path, method: :get do %>
+        <div class="form-group">
+          <%= label_tag :address %>
+          <%= search_field_tag :address, params[:address], class: 'form-control' %>
+        </div>
+
+        <%= submit_tag('Submit', name: nil, class: 'btn btn-primary') %>
+      <% end %>
+    </div>
+  </div>
+</div>
