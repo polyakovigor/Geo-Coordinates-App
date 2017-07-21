@@ -1,0 +1,44 @@
+-#%h1 Listing locations
+-#
+-#.row
+-#  .col-lg-12
+-#    %table.table.table-hover.table-bordered.table-striped
+-#      %thead
+-#        %tr
+-#          %th Address
+-#          %th Latitude
+-#          %th Longitude
+-#
+-#      %tbody
+-#        - @locations.each do |location|
+-#          %tr
+-#            %td= location.address
+-#            %td= location.latitude
+-#            %td= location.longitude
+-#            %td= link_to 'Show', location
+-#            %td= link_to 'Edit', edit_location_path(location)
+-#            %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+-#
+-#%br
+-#
+-#= link_to 'New Location', new_location_path
+
+.center.jumbotron
+  .text-center
+    %h1 Send Us Your Address
+    %h2 and we'll let you know where you are
+  .row
+    .col-md-6.col-md-offset-3
+      = form_tag locations_path, method: :get do
+        .form-group
+          = label_tag :address
+          = search_field_tag :address, params[:address], class: 'form-control'
+
+        = submit_tag('Submit', name: nil, class: 'btn btn-lg btn-primary')
+
+      #coordinates
+        %h3
+          - if @location.present?
+            %b= "#{@location.latitude} #{@location.longitude}"
+          - else
+            %b There are no locations containing the term(s) <%= params[:search] %>.

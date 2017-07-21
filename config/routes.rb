@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'locations#get_location'
+  root 'locations#index'
 
-  get 'locations/get_location'
+  resources :locations
+
 end
