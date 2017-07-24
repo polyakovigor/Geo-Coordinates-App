@@ -1,18 +1,18 @@
-= form_for @location do |f|
+= form_for @location, html: { class: 'form-horizontal'} do |f|
   - if @location.errors.any?
     #error_explanation
       %h2= "#{pluralize(@location.errors.count, 'error')} prohibited this location from being saved:"
       %ul
         - @location.errors.full_messages.each do |message|
           %li= message
-  .field
+  .form-group
     = f.label :address
-    = f.text_field :address
-  .field
+    = f.text_field :address, class: 'form-control'
+  .form-group
     = f.label :latitude
-    = f.text_field :latitude
-  .field
+    = f.text_field :latitude, class: 'form-control'
+  .form-group
     = f.label :longitude
-    = f.text_field :longitude
-  .actions
-    = f.submit 'Save'
+    = f.text_field :longitude, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-default'

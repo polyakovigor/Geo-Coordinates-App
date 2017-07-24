@@ -9,7 +9,21 @@
 %p
   %b Longitude:
   = @location.longitude
+%p
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
 
-= link_to 'Edit', edit_location_path(@location)
+- if @location.nearbys.present?
+  %h3 Nearby Locations
+  %ul
+  - for location in @location.nearbys(10)
+    %li
+      = link_to location.address, location
+      (#{location.distance.round(2)} miles)
+
+= link_to edit_location_path(@location), title: 'Edit' do
+  %span.glyphicon.glyphicon-edit
+\|
+= link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy' do
+  %span.glyphicon.glyphicon-trash
 \|
 = link_to 'Back', locations_path

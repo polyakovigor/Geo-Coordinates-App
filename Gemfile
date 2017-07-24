@@ -36,6 +36,7 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'dotenv-rails', '~> 2.2.1'
 gem 'haml-rails'
 gem 'geocoder'
+gem 'kaminari'
 gem 'gmaps4rails'
 
 group :development, :test do
