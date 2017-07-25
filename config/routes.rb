@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'locations#index'
+  get :search, controller: :main
+  root 'main#search'
 
   resources :locations
 end

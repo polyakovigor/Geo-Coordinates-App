@@ -1,0 +1,26 @@
+.center.jumbotron
+  .text-center
+    .form-text
+      %h1 Send Us Your Address
+    %h2 and we'll let you know where you are
+  .row
+    .col-md-6.col-md-offset-3
+      = form_tag locations_path, method: :get do
+        .form-group
+          = label_tag :address
+          = text_field_tag :search, params[:search], class: 'form-control'
+        .form-group
+          = submit_tag('Submit', name: nil, class: 'btn btn-lg btn-primary')
+
+        - if @locations.blank?
+          %section
+            .text-center
+              %h3
+                Please try modifying your search to get more results
+
+      -##coordinates
+      -#  %h3
+      -#    - if @location.present?
+      -#      %b= "#{@location.latitude} #{@location.longitude}"
+      -#    - else
+      -#      %b There are no locations.

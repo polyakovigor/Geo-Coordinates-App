@@ -37,7 +37,7 @@ gem 'dotenv-rails', '~> 2.2.1'
 gem 'haml-rails'
 gem 'geocoder'
 gem 'kaminari'
-gem 'gmaps4rails'
+gem 'ransack', '~> 1.8', '>= 1.8.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,22 +1,23 @@
 %p#notice= notice
 
-%p
+.text-left
   %b Address:
-  = @location.address
-%p
+  %legend= @location.address
+.text-left
   %b Latitude:
-  = @location.latitude
-%p
+  %legend= @location.latitude
+.text-left
   %b Longitude:
-  = @location.longitude
-%p
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
+  %legend= @location.longitude
+
+.img-responsive
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}"
 
 - if @location.nearbys.present?
   %h3 Nearby Locations
-  %ul
+  %ul.list-group
   - for location in @location.nearbys(10)
-    %li
+    %li.list-group-item-heading
       = link_to location.address, location
       (#{location.distance.round(2)} miles)
 
