@@ -5,31 +5,38 @@
       = text_field_tag :search, params[:search], class: 'form-control'
     .form-group
       = submit_tag 'Search Near', name: nil, class: 'btn btn-primary'
+  - if @locations.blank?
+    %section
+      .text-center
+        %h3
+          No locations nearby
 
-%h1 Listing locations
+- if @locations.present?
 
-.row
-  .col-lg-12
-    %table.table
-      %thead
-        %tr
-          %th Address
-          %th Latitude
-          %th Longitude
-      %tbody
-        - @locations.each do |location|
+  %h1 Listing locations
+
+  .row
+    .col-lg-12
+      %table.table
+        %thead
           %tr
-            %td= link_to location.address, location
-            %td= location.latitude
-            %td= location.longitude
-            %td
-              = link_to edit_location_path(location), title: 'Edit' do
-                %span.glyphicon.glyphicon-edit
-            %td
-              = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy' do
-                %span.glyphicon.glyphicon-trash
+            %th Address
+            %th Latitude
+            %th Longitude
+        %tbody
+          - @locations.each do |location|
+            %tr
+              %td= link_to location.address, location
+              %td= location.latitude
+              %td= location.longitude
+              %td
+                = link_to edit_location_path(location), title: 'Edit' do
+                  %span.glyphicon.glyphicon-edit
+              %td
+                = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy' do
+                  %span.glyphicon.glyphicon-trash
 
-  = link_to 'New Location', new_location_path, class: 'btn btn-primary'
+    = link_to 'New Location', new_location_path, class: 'btn btn-primary'
 
-  .col-lg-12
-    = paginate @locations if @locations.present?
+    .col-lg-12
+      = paginate @locations if @locations.present?
