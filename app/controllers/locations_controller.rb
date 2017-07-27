@@ -1,12 +1,11 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
-  # Geocoder.coordinates(params[:address]) return array with [latitude, longitude].
   # GET /locations
   # GET /locations.json
   def index
     if params[:search].present?
-      @locations = Location.where(params[:search]).page(params[:page]).per(10)
+      @locations = Location.near(params[:search]).page(params[:page]).per(10)
     else
       @locations = Location.page(params[:page]).per(10)
     end

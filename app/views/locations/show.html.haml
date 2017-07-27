@@ -1,24 +1,25 @@
 %p#notice= notice
 
-%p
+.text-left
   %b Address:
-  = @location.address
-%p
+  %legend= @location.address
+.text-left
   %b Latitude:
-  = @location.latitude
-%p
+  %legend= @location.latitude
+.text-left
   %b Longitude:
-  = @location.longitude
-%p
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
+  %legend= @location.longitude
+
+.img-responsive
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}"
 
 - if @location.nearbys.present?
   %h3 Nearby Locations
-  %ul
+  %ul.list-group
   - for location in @location.nearbys(10)
-    %li
+    %li.list-group-item-heading
       = link_to location.address, location
-      (#{location.distance.round(2)} miles)
+      (#{location.distance.round(2)} km)
 
 = link_to edit_location_path(@location), title: 'Edit' do
   %span.glyphicon.glyphicon-edit
@@ -26,4 +27,4 @@
 = link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy' do
   %span.glyphicon.glyphicon-trash
 \|
-= link_to 'Back', locations_path
+= link_to 'All locations', locations_path

@@ -1,24 +1,9 @@
-# README
+# Geo-Location-App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Simple **rails-app** which allows a user to enter their address and then returns the geo coordinates of the address location. 
+On the start page 
+You can create a new location by entering _address_, for example “St Pancras Station, London”. After that you can see that the location was successfully created: latitude and longitude are displayed on the page. 
 
-Things you may want to cover:
+Under the map you can see the nearby locations if there are such.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 

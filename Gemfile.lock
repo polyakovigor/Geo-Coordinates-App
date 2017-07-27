@@ -76,7 +76,6 @@ GEM
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    gmaps4rails (2.1.2)
     haml (5.0.1)
       temple (>= 0.8.0)
       tilt
@@ -220,7 +219,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails (~> 2.2.1)
   geocoder
-  gmaps4rails
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.1)
@@ -241,4 +239,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.2
+   1.15.3
