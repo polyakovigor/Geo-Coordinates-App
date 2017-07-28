@@ -17,11 +17,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-a.btn.btn-success {
-  color: white;
-  &:visited {
-    color: white;
-  }
+body {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #777;
+}
+
+.separator {
+  border-left: 2px #337ab7 solid;
 }
 
 a, a:link, a:visited, a:hover {
@@ -60,7 +68,7 @@ a:hover {
 }
 
 #btn_top:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #555;
 }
 
 a.destroy {
@@ -70,3 +78,30 @@ a.destroy {
 a.edit {
   color: #ffa31a;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 99%;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 36px 0 rgba(0,0,0,0.4);
+}
+
+img {
+  border-radius: 5px 5px 5px 5px;
+  width: 100%;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+[class*='col-'] {
+  padding: 10px;
+}
+
+
+

@@ -1,24 +1,20 @@
 .jumbotron
   %h1 List locations
   .row
-    .col-lg-12
-      %table.table
-        %thead
-          %tr
-            %th Address
-            %th Latitude
-            %th Longitude
-        %tbody
-          - @locations.each do |location|
-            %tr
-              %td= link_to location.address, location
-              %td= location.latitude
-              %td= location.longitude
-              %td
-                = link_to edit_location_path(location), title: 'Edit', class: 'edit' do
-                  %span.glyphicon.glyphicon-edit
-              %td
-                = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy', class: 'destroy' do
-                  %span.glyphicon.glyphicon-trash
-    .col-lg-12
-      = paginate @locations if @locations.present?
+    - @locations.each do |location|
+      .col-sm-6
+        .card
+          = link_to (image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{location.latitude}%2C#{location.longitude}", class: 'img-responsive'), location
+          .container
+            %h4
+              %b= location.address
+            %p
+              = location.latitude
+            %p
+              = location.longitude
+            %p
+              = link_to edit_location_path(location), title: 'Edit', class: 'edit' do
+                %span.glyphicon.glyphicon-edit
+              = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy', class: 'destroy' do
+                %span.glyphicon.glyphicon-trash
+  = paginate @locations if @locations.present?

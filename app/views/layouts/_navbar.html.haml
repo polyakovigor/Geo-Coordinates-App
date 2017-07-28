@@ -11,11 +11,13 @@
           Geo-Coordinates
           %span.glyphicon.glyphicon-globe{ aria: { hidden: true } }
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav{ style: 'border-left: 2px #337ab7 solid;' }
-        %li
+      %ul.nav.navbar-nav
+        %li.separator
           = link_to 'New Location', new_location_path
+        %li.separator
+          = link_to 'All locations', locations_path
       .navbar-form.navbar-right
-        = form_tag locations_path, method: :get, html: { class: 'form-inline' } do
+        = form_tag locations_path, method: :get do
           .form-group
             = text_field_tag :search, params[:search], placeholder: 'Search for...', class: 'form-control'
           .form-group
