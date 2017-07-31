@@ -6,15 +6,12 @@
         .card
           = link_to (image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{location.latitude}%2C#{location.longitude}", class: 'img-responsive'), location
           .container
-            %h4
+            .card-text
               %b= location.address
             %p
-              = location.latitude
-            %p
-              = location.longitude
-            %p
-              = link_to edit_location_path(location), title: 'Edit', class: 'edit' do
+              = link_to edit_location_path(location), title: 'Edit Location', class: 'edit' do
                 %span.glyphicon.glyphicon-edit
-              = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy', class: 'destroy' do
+              = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy Location', class: 'destroy' do
                 %span.glyphicon.glyphicon-trash
   = paginate @locations if @locations.present?
+  -# current page

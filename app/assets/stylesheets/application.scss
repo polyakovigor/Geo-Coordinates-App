@@ -20,6 +20,12 @@
 body {
   padding-top: 70px;
   padding-bottom: 70px;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  min-height: 100%;
 }
 
 .footer {
@@ -42,10 +48,6 @@ a:visited {
 
 a:hover {
   background-color: white;
-
-  a, a:link, a:visited {
-    text-decoration: none;
-  }
 }
 
 .footer {
@@ -103,5 +105,7 @@ img {
   padding: 10px;
 }
 
-
-
+//.card-text {
+//  height: 40px;
+//  overflow: hidden;
+//}

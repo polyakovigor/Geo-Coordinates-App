@@ -37,7 +37,6 @@ gem 'dotenv-rails', '~> 2.2.1'
 gem 'haml-rails'
 gem 'geocoder'
 gem 'kaminari'
-gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
