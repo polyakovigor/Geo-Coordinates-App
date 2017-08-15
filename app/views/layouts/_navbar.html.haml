@@ -6,16 +6,20 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      .navbar-brand
+      .navbar-brand.separator_l
         = link_to root_path do
           Geo-Coordinates
           %span.glyphicon.glyphicon-globe{ aria: { hidden: true } }
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.separator
-          = link_to 'New Location', new_location_path
-        %li.separator
-          = link_to 'All locations', locations_path
+        %li.separator_l
+          = link_to new_location_path, class: 'new' do
+            New Location
+            %span.glyphicon.glyphicon-map-marker{ aria: { hidden: true } }
+        %li.separator_l.separator_r
+          = link_to locations_path, class: 'all' do
+            All locations
+            %span.glyphicon.glyphicon-list{ aria: { hidden: true } }
       .navbar-form.navbar-right
         = form_tag locations_path, method: :get do
           .form-group

@@ -1,29 +1,30 @@
 %p#notice= notice
 
-.text-left
-  %b Address:
-  %legend= @location.address
-.text-left
-  %b Latitude:
-  %legend= @location.latitude
-.text-left
-  %b Longitude:
-  %legend= @location.longitude
+.card-block
+  .text-left
+    %b Address:
+    %legend= @location.address
+  .text-left
+    %b Latitude:
+    %legend= @location.latitude
+  .text-left
+    %b Longitude:
+    %legend= @location.longitude
+  .row
+    .col-sm-1
+      = link_to edit_location_path(@location), title: 'Edit current location', class: 'edit' do
+        %span.glyphicon.glyphicon-edit
+      \|
+      = link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy current location', class: 'destroy' do
+        %span.glyphicon.glyphicon-trash
+  .text-center
+    = image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}",
+      alt: "#{@location.address} on the map", class: 'img-responsive'
 
-.img-responsive
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}",
-    alt: "#{@location.address} on the map"
-
-- if @location.nearbys.present?
-  %h3 Nearby Locations
-  %ul.list-group
-  - for location in @location.nearbys(10)
-    %li.list-group-item-heading
-      = link_to location.address, location
-      (#{location.distance.round(2)} km)
-
-= link_to edit_location_path(@location), title: 'Edit' do
-  %span.glyphicon.glyphicon-edit
-\|
-= link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy' do
-  %span.glyphicon.glyphicon-trash
+  - if @location.nearbys.present?
+    %h3 Nearby Locations
+    %ul.list-group
+    - for location in @location.nearbys(10)
+      %li.list-group-item-heading
+        = link_to location.address, location
+        (#{location.distance.round(2)} km)

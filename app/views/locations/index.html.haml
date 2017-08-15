@@ -4,7 +4,8 @@
     - @locations.each do |location|
       .col-sm-6
         .card
-          = link_to (image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{location.latitude}%2C#{location.longitude}", class: 'img-responsive'), location
+          = link_to (image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{location.latitude}%2C#{location.longitude}",
+          class: 'img-responsive'), location
           .container
             .card-text
               %b= location.address
@@ -13,5 +14,5 @@
                 %span.glyphicon.glyphicon-edit
               = link_to location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy Location', class: 'destroy' do
                 %span.glyphicon.glyphicon-trash
-  = paginate @locations if @locations.present?
+  = paginate @locations if present?
   -# current page

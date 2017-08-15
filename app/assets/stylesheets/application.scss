@@ -34,8 +34,12 @@ html {
   border-top: 1px solid #777;
 }
 
-.separator {
+.separator_l {
   border-left: 2px #337ab7 solid;
+}
+
+.separator_r {
+  border-right: 2px #337ab7 solid;
 }
 
 a, a:link, a:visited, a:hover {
@@ -43,11 +47,11 @@ a, a:link, a:visited, a:hover {
 }
 
 a:visited {
-  color: #337ab7;
+  color: #5bc0de;
 }
 
 a:hover {
-  background-color: white;
+  background-color: transparent;
 }
 
 .footer {
@@ -62,7 +66,7 @@ a:hover {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #337ab7;
+  background-color: #5bc0de;
   color: white;
   cursor: pointer;
   padding: 15px;
@@ -79,6 +83,10 @@ a.destroy {
 
 a.edit {
   color: #ffa31a;
+}
+
+a.new, a.all {
+  color: #5bc0de !important;
 }
 
 .card {
@@ -105,7 +113,35 @@ img {
   padding: 10px;
 }
 
-//.card-text {
-//  height: 40px;
-//  overflow: hidden;
-//}
+input {
+  height: auto !important;
+}
+
+.card-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
