@@ -1,15 +1,9 @@
-%p#notice= notice
-
+%h1.page-header
+  = @location.address
 .card-block
   .text-left
-    %b Address:
-    %legend= @location.address
-  .text-left
-    %b Latitude:
-    %legend= @location.latitude
-  .text-left
-    %b Longitude:
-    %legend= @location.longitude
+    %b Coordinates
+    %legend #{@location.latitude}, #{@location.longitude}
   .row
     .col-sm-1
       = link_to edit_location_path(@location), title: 'Edit current location', class: 'edit' do
@@ -19,12 +13,12 @@
         %span.glyphicon.glyphicon-trash
   .text-center
     = image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}",
-      alt: "#{@location.address} on the map", class: 'img-responsive'
+      alt: "#{@location.address} on the map", class: 'img-thumbnail'
 
-  - if @location.nearbys.present?
-    %h3 Nearby Locations
-    %ul.list-group
-    - for location in @location.nearbys(10)
-      %li.list-group-item-heading
-        = link_to location.address, location
-        (#{location.distance.round(2)} km)
+- if @location.nearbys.present?
+  %h3.page-header Places near this address
+  %ul.list-group
+  - for location in @location.nearbys(10)
+    %li.list-group-item
+      = link_to location.address, location
+      (#{location.distance.round(2)} km)

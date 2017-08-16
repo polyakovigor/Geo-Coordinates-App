@@ -20,5 +20,9 @@
         = f.text_field :longitude, class: 'form-control'
         %small.text-muted
           (Not required)
-      .form-group.text-center
+      .form-group
         = f.submit class: 'btn btn-info'
+  .col-sm-4
+    = button_to 'Find on the map', '#', id: 'find-on-map', class: 'btn btn-info btn-sm'
+.card
+  #map

@@ -5,9 +5,9 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     if params[:search].present?
-      @locations = Location.near(params[:search]).page(params[:page]).per(10)
+      @locations = Location.near(params[:search], 20, order: :address).page(params[:page]).per(10)
     else
-      @locations = Location.page(params[:page]).per(10)
+      @locations = Location.order(:created_at).page(params[:page]).per(10)
     end
   end
 

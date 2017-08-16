@@ -18,6 +18,8 @@
 @import "bootstrap";
 
 body {
+  background: url("geo.png") no-repeat fixed center;
+  background-size: cover;
   padding-top: 70px;
   padding-bottom: 70px;
   min-height: 100%;
@@ -30,17 +32,20 @@ html {
 
 .footer {
   padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #777;
+  color: black;
+  border-top: 1px solid black;
+  text-align: center;
 }
 
-.separator_l {
-  border-left: 2px #337ab7 solid;
+[class*='col-'] {
+  padding: 10px;
 }
 
-.separator_r {
-  border-right: 2px #337ab7 solid;
+input {
+  height: auto !important;
 }
+
+// *Links*
 
 a, a:link, a:visited, a:hover {
   text-decoration: none;
@@ -54,9 +59,19 @@ a:hover {
   background-color: transparent;
 }
 
-.footer {
-  text-align: center;
+a.destroy {
+  color: red;
 }
+
+a.edit {
+  color: #ffa31a;
+}
+
+a.new, a.all, a.new_distance {
+  color: #5bc0de !important;
+}
+
+// *Button 'to top'*
 
 #btn_top {
   display: none;
@@ -77,53 +92,7 @@ a:hover {
   background-color: #555;
 }
 
-a.destroy {
-  color: red;
-}
-
-a.edit {
-  color: #ffa31a;
-}
-
-a.new, a.all {
-  color: #5bc0de !important;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 99%;
-  border-radius: 5px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 36px 0 rgba(0,0,0,0.4);
-}
-
-img {
-  border-radius: 5px 5px 5px 5px;
-  width: 100%;
-}
-
-.container {
-  padding: 2px 16px;
-}
-
-[class*='col-'] {
-  padding: 10px;
-}
-
-input {
-  height: auto !important;
-}
-
-.card-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  word-wrap: break-word;
-}
+// *Alerts*
 
 .alert-error {
   background-color: #f2dede;
@@ -144,4 +113,58 @@ input {
   border-color: #d6e9c6;
   color: #468847;
   text-align: left;
+}
+
+// *Cards*
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 99%;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #5bc0de;
+}
+
+.card:hover {
+  box-shadow: 0 8px 36px 0 rgba(0,0,0,0.4);
+}
+
+img {
+  border-radius: 5px 5px 5px 5px;
+  width: 100%;
+}
+
+.card-text {
+  padding: 2px 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+// *Other*
+
+.page-header {
+  color: #0059b3;
+  line-height: 0.8;
+  text-decoration: underline;
+  font-family: "Lucida Console", Lucida, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+.jumbotron {
+  background-color: white;
+}
+
+.text-left b {
+  color: #0059b3;
 }

@@ -1,0 +1,18 @@
+%h1.page-header Measure Distance
+.row
+  .col-md-6.col-md-offset-3
+    = form_tag distances_path do
+      .form-group
+        = label_tag 'from', 'From'
+        %small.text-muted
+          (select location "FROM")
+      .form-group
+        = select_tag 'from', options_from_collection_for_select(@locations, :id, :address), include_blank: true, class: 'form-control'
+      .form-group
+        = label_tag 'to', 'To'
+        %small.text-muted
+          (select location "TO")
+      .form-group
+        = select_tag 'to', options_from_collection_for_select(@locations, :id, :address), include_blank: true, class: 'form-control'
+      .form-group
+        = submit_tag 'Go!', class: 'btn btn-info'
