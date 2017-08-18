@@ -14,6 +14,5 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
-//= require map
 //= require btn_top
 //= require_tree.

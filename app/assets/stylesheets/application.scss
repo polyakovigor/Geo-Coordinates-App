@@ -45,7 +45,7 @@ input {
   height: auto !important;
 }
 
-// *Links*
+// *Links* //
 
 a, a:link, a:visited, a:hover {
   text-decoration: none;
@@ -71,7 +71,7 @@ a.new, a.all, a.new_distance {
   color: #5bc0de !important;
 }
 
-// *Button 'to top'*
+// *Button 'to top'* //
 
 #btn_top {
   display: none;
@@ -92,7 +92,7 @@ a.new, a.all, a.new_distance {
   background-color: #555;
 }
 
-// *Alerts*
+// *Alerts* //
 
 .alert-error {
   background-color: #f2dede;
@@ -115,7 +115,7 @@ a.new, a.all, a.new_distance {
   text-align: left;
 }
 
-// *Cards*
+// *Cards* //
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -144,7 +144,7 @@ img {
   word-wrap: break-word;
 }
 
-// *Other*
+// *Other* //
 
 .page-header {
   color: #0059b3;
@@ -167,4 +167,14 @@ img {
 
 .text-left b {
   color: #0059b3;
+}
+
+input#search {
+  width: 150px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+
+input#search:focus {
+  width: 250px;
 }

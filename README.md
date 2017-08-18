@@ -12,6 +12,5 @@ For run this project locally:
 * run bundle install
 * setup database with a username/password, modify the _# config/database.yml.example_ file to contain the username/password that you specified
 * run rake db:create db:migrate db:seed
-* написать про GOOGLE_API_KEY
 * run rails server
 * You can now visit [http://localhost:3000](http://localhost:3000) to view website!
