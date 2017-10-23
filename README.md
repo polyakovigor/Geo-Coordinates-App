@@ -1,6 +1,6 @@
 # Geo-Coordinates-App
 
-###Simple **rails-app** which allows a user to enter their address and then returns the geo coordinates of the address location. 
+Simple **rails-app** which allows a user to enter their address and then returns the geo coordinates of the address location. 
 On the start page user can see list of locations(if there are such), also he can create a new location by entering the _address_, for example “St Pancras Station, London”. After that you can see that the location was successfully created: latitude and longitude are displayed on the page. Marker displays address on the static google map. Under the map you can see the nearby locations if there are such.
  
 For run this project locally:
