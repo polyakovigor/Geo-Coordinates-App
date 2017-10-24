@@ -8,11 +8,10 @@
     .col-sm-1
       = link_to edit_location_path(@location), title: 'Edit current location', class: 'edit' do
         %span.glyphicon.glyphicon-edit
-      \|
       = link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy current location', class: 'destroy' do
         %span.glyphicon.glyphicon-trash
   .text-center
-    = image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}",
+    = image_tag "https://maps.googleapis.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}",
       alt: "#{@location.address} on the map", class: 'img-thumbnail'
 
 - if @location.nearbys.present?

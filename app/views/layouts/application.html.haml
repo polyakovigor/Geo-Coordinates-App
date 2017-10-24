@@ -11,5 +11,5 @@
     .container
       = bootstrap_flash
       = yield
-      %button#btn_top{ onclick: 'topFunction()', title: 'Go to top' } Top
+      %button{ onclick: 'topFunction()', title: 'Go to top', id: 'btn_top' } Top
       = render 'layouts/footer'

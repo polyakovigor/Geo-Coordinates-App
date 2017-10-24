@@ -3,8 +3,8 @@
   - @locations.each do |location|
     .col-sm-6
       .card
-        = link_to (image_tag "http://maps.google.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{location.latitude}%2C#{location.longitude}",
-        class: 'img-responsive'), location
+        = link_to (image_tag "https://maps.googleapis.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{location.latitude}%2C#{location.longitude}",
+        alt: "#{location.address} on the map", class: 'img-responsive'), location
         .card-text
           %b= location.address
           %p
