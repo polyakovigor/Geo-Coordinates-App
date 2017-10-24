@@ -11,7 +11,7 @@
       = link_to @location, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Destroy current location', class: 'destroy' do
         %span.glyphicon.glyphicon-trash
   .text-center
-    = image_tag "https://maps.googleapis.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}",
+    = image_tag "https://maps.googleapis.com/maps/api/staticmap?size=500x400&sensor=false&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}&key=AIzaSyDpDfTHgUxH9G2CWIQaLab0mO0ZtJN4PLA",
       alt: "#{@location.address} on the map", class: 'img-thumbnail'
 
 - if @location.nearbys.present?
