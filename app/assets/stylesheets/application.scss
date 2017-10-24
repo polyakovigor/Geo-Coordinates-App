@@ -18,8 +18,7 @@
 @import "bootstrap";
 
 body {
-  background-image:url('<%= asset_path('geo.png') %>') no-repeat fixed center;
-  background-size: cover;
+  background: asset_path('geo.png') no-repeat fixed center;
   padding-top: 70px;
   padding-bottom: 70px;
   min-height: 100%;
